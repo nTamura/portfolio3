@@ -55,9 +55,9 @@ function NavLinks({ classes }) {
 
 const styles = {
   root: {
-    '@media screen and (max-width: 769px)': {
-      display: 'none',
-    },
+    // '@media screen and (max-width: 769px)': {
+    //   display: 'none',
+    // },
     display: 'flex',
     width: '100%',
     alignItems: 'center',

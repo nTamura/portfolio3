@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import withStyles from 'react-jss'
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { Transition } from 'react-transition-group'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
@@ -8,31 +8,6 @@ import HamburgerMenu from 'react-hamburger-menu'
 
 function NavLinksMobile({ classes }) {
   const [menuOpen, setMenuOpen] = useState(false)
-  const [inProp, setInProp] = useState(false)
-
-  useEffect(() => {
-    document.addEventListener('click', handleOutsideClick(), false)
-    return () => {
-      document.removeEventListener('click', handleOutsideClick(), false)
-    }
-  }, [])
-
-  const node = useRef(null)
-  // const toggleMenu = e => {
-  //   if (!menuOpen) {
-  //     document.addEventListener('click', handleOutsideClick(e), false)
-  //   } else {
-  //     document.removeEventListener('click', handleOutsideClick(e), false)
-  //   }
-  //   setMenuOpen(!menuOpen)
-  // }
-
-  const handleOutsideClick = () => {
-    if (!node.current) {
-      setMenuOpen(false)
-    }
-  }
-
   const transitionStyles = {
     entering: { opacity: 0 },
     entered: { opacity: 1 },
@@ -41,12 +16,7 @@ function NavLinksMobile({ classes }) {
   return (
     <div className={classes.root}>
       <div className={classes.flexGrow}>
-        <NavLink
-          exact
-          to="/"
-          className={classes.link}
-          activeClassName={classes.activeLink}
-        >
+        <NavLink exact to="/" className={classes.activeLink}>
           nic
           <br />
           tamura
@@ -55,7 +25,6 @@ function NavLinksMobile({ classes }) {
 
       <div>
         <button
-          ref={node}
           className={classes.menuButton}
           type="button"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -68,14 +37,14 @@ function NavLinksMobile({ classes }) {
             animationDuration={0.4}
           />
         </button>
-
         <Transition in={menuOpen} timeout={200}>
           {state => (
             <div className={classes.dropdownMenu}>
-              <Link
+              <NavLink
                 to="/portfolio"
                 className={classes.link}
                 activeClassName={classes.activeLink}
+                onClick={() => setMenuOpen(false)}
                 style={{
                   transition: 'opacity 100ms ease-in-out',
                   opacity: 0,
@@ -83,11 +52,12 @@ function NavLinksMobile({ classes }) {
                 }}
               >
                 portfolio
-              </Link>
-              <Link
+              </NavLink>
+              <NavLink
                 to="/about"
                 className={classes.link}
                 activeClassName={classes.activeLink}
+                onClick={() => setMenuOpen(false)}
                 style={{
                   transition: 'opacity 300ms ease-in-out',
                   opacity: 0,
@@ -95,13 +65,13 @@ function NavLinksMobile({ classes }) {
                 }}
               >
                 about
-              </Link>
-
+              </NavLink>
               <a
                 href="https://www.linkedin.com/in/nictamura/"
                 rel="noopener noreferrer"
                 target="_blank"
                 className={classes.link}
+                onClick={() => setMenuOpen(false)}
                 style={{
                   transition: 'opacity 500ms ease-in-out',
                   opacity: 0,
@@ -115,6 +85,7 @@ function NavLinksMobile({ classes }) {
                 rel="noopener noreferrer"
                 target="_blank"
                 className={classes.link}
+                onClick={() => setMenuOpen(false)}
                 style={{
                   transition: 'opacity 700ms ease-in-out',
                   opacity: 0,
@@ -133,9 +104,9 @@ function NavLinksMobile({ classes }) {
 
 const styles = {
   root: {
-    '@media screen and (min-width: 768px)': {
-      display: 'none',
-    },
+    // '@media screen and (min-width: 768px)': {
+    //   display: 'none',
+    // },
     display: 'flex',
     width: '100%',
   },
@@ -161,13 +132,14 @@ const styles = {
     right: 16,
     textAlign: 'right',
     position: 'absolute',
+    zIndex: 10,
   },
   link: {
     color: 'white',
     textDecoration: 'none',
     padding: 8,
     margin: 10,
-    transition: 'background-color 0.4s ease',
+    zIndex: 20,
     '&:hover': {
       backgroundColor: 'black',
       color: 'white',

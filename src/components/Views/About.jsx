@@ -4,7 +4,7 @@ import withStyles from 'react-jss'
 function About({ classes }) {
   return (
     <div className={`${classes.root} ${'container'}`}>
-      <p>about</p>
+      <p>about page</p>
     </div>
   )
 }

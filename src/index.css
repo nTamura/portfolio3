@@ -11,7 +11,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Josefin Sans', 'Helvetica Neue', sans-serif;
-  /* font-weight: 300 !important; */
   /* font-family: 'montserrat', 'Roboto', 'Helvetica Neue', sans-serif; */
   color: #fff;
   -webkit-font-smoothing: antialiased;
@@ -55,21 +54,4 @@ h6 {
   .container {
     width: 1170px;
   }
-}
-.fade-enter {
-  opacity: 0.01;
-}
-
-.fade-enter.fade-enter-active {
-  opacity: 1;
-  transition: opacity 500ms ease-in;
-}
-
-.fade-leave {
-  opacity: 1;
-}
-
-.fade-leave.fade-leave-active {
-  opacity: 0.01;
-  transition: opacity 300ms ease-in;
 }

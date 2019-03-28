@@ -2,12 +2,14 @@ import React from 'react'
 import withStyles from 'react-jss'
 import NavLinks from 'components/Navigation/NavLinks'
 import NavLinksMobile from 'components/Navigation/NavLinksMobile'
+import MediaQuery from 'react-responsive'
 
 function Navbar({ classes }) {
   return (
     <div className={`${classes.root} ${'container'}`}>
-      <NavLinks />
-      <NavLinksMobile />
+      <MediaQuery minWidth={768}>
+        {matches => (matches ? <NavLinks /> : <NavLinksMobile />)}
+      </MediaQuery>
     </div>
   )
 }
