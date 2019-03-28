@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react'
 import withStyles from 'react-jss'
 import { NavLink, Link } from 'react-router-dom'
-import { CSSTransition, Transition } from 'react-transition-group'
+import { Transition } from 'react-transition-group'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
+import HamburgerMenu from 'react-hamburger-menu'
 
 function NavLinksMobile({ classes }) {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -18,7 +18,6 @@ function NavLinksMobile({ classes }) {
   }, [])
 
   const node = useRef(null)
-
   // const toggleMenu = e => {
   //   if (!menuOpen) {
   //     document.addEventListener('click', handleOutsideClick(e), false)
@@ -34,10 +33,6 @@ function NavLinksMobile({ classes }) {
     }
   }
 
-  const defaultStyle = (value = 200) => {
-    transition: `opacity ${value}ms ease-in-out`,
-    opacity: 0,
-  }
   const transitionStyles = {
     entering: { opacity: 0 },
     entered: { opacity: 1 },
@@ -56,33 +51,7 @@ function NavLinksMobile({ classes }) {
           <br />
           tamura
         </NavLink>
-        <pre>{JSON.stringify(menuOpen, 2, null)}</pre>
       </div>
-
-      <Transition in={inProp} timeout={200}>
-        {state => (
-          <>
-            <div
-              style={{
-                ...defaultStyle,
-                ...transitionStyles[state],
-              }}
-            >
-              I'm a fade Transition!
-            </div>
-            <div
-              style={{
-                ...defaultStyle,
-                ...transitionStyles[state],
-              }}
-            >
-              I'm a fade Transition!
-            </div>
-          </>
-        )}
-      </Transition>
-
-      <button onClick={() => setInProp(!inProp)}>Click to Enter</button>
 
       <div>
         <button
@@ -91,96 +60,78 @@ function NavLinksMobile({ classes }) {
           type="button"
           onClick={() => setMenuOpen(!menuOpen)}
         >
-          <FontAwesomeIcon icon={faBars} />
+          <HamburgerMenu
+            isOpen={menuOpen}
+            width={18}
+            height={15}
+            color="#FFF"
+            animationDuration={0.4}
+          />
         </button>
-        <Transition in={menuOpen} timeout={500}>
-          {/* {menuOpen => */}
-          <>
-            <Link
-              to="/portfolio"
-              // className={classes.link}
-              // className={menuOpen ? 'fadeIn' : 'fadeOut'}
-              activeClassName={classes.activeLink}
-            >
-              portfolio
-            </Link>
-            <Link
-              to="/about"
-              // className={classes.link}
-              // className={menuOpen ? 'fadeIn' : 'fadeOut'}
-              activeClassName={classes.activeLink}
-            >
-              about
-            </Link>
-            <a
-              href="https://www.linkedin.com/in/nictamura/"
-              rel="noopener noreferrer"
-              target="_blank"
-              // className={classes.link}
-              // className={menuOpen ? 'fadeIn' : 'fadeOut'}
-            >
-              <FontAwesomeIcon icon={faGithub} />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/nictamura/"
-              rel="noopener noreferrer"
-              target="_blank"
-              // className={classes.link}
-              // className={menuOpen ? 'fadeIn' : 'fadeOut'}
-            >
-              <FontAwesomeIcon icon={faLinkedin} />
-            </a>
-          </>
+
+        <Transition in={menuOpen} timeout={200}>
+          {state => (
+            <div className={classes.dropdownMenu}>
+              <Link
+                to="/portfolio"
+                className={classes.link}
+                activeClassName={classes.activeLink}
+                style={{
+                  transition: 'opacity 100ms ease-in-out',
+                  opacity: 0,
+                  ...transitionStyles[state],
+                }}
+              >
+                portfolio
+              </Link>
+              <Link
+                to="/about"
+                className={classes.link}
+                activeClassName={classes.activeLink}
+                style={{
+                  transition: 'opacity 300ms ease-in-out',
+                  opacity: 0,
+                  ...transitionStyles[state],
+                }}
+              >
+                about
+              </Link>
+
+              <a
+                href="https://www.linkedin.com/in/nictamura/"
+                rel="noopener noreferrer"
+                target="_blank"
+                className={classes.link}
+                style={{
+                  transition: 'opacity 500ms ease-in-out',
+                  opacity: 0,
+                  ...transitionStyles[state],
+                }}
+              >
+                <FontAwesomeIcon icon={faGithub} />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/nictamura/"
+                rel="noopener noreferrer"
+                target="_blank"
+                className={classes.link}
+                style={{
+                  transition: 'opacity 700ms ease-in-out',
+                  opacity: 0,
+                  ...transitionStyles[state],
+                }}
+              >
+                <FontAwesomeIcon icon={faLinkedin} />
+              </a>
+            </div>
+          )}
         </Transition>
       </div>
-      {/* 
-      <NavLink
-        to="/portfolio"
-        className={classes.link}
-        activeClassName={classes.activeLink}
-      >
-        portfolio
-      </NavLink>
-      <NavLink
-        to="/about"
-        className={classes.link}
-        activeClassName={classes.activeLink}
-      >
-        about
-      </NavLink>
-      <a
-        href="https://www.linkedin.com/in/nictamura/"
-        rel="noopener noreferrer"
-        target="_blank"
-        className={classes.link}
-      >
-        <FontAwesomeIcon icon={faGithub} />
-      </a>
-      <a
-        href="https://www.linkedin.com/in/nictamura/"
-        rel="noopener noreferrer"
-        target="_blank"
-        className={classes.link}
-      >
-        <FontAwesomeIcon icon={faLinkedin} />
-      </a> */}
     </div>
   )
 }
 
 const styles = {
-  // fadeOut: {
-  //   opacity: 0,
-  //   width: 0,
-  //   height: 0,
-  //   transition: 'width 0.5s 0.5s, height 0.5s 0.5s, opacity 0.5s',
-  // },
-  // fadeIn: {
-  //   opacity: 1,
-  //   width: 100,
-  //   height: 100,
-  //   transition: 'width 0.5s, height 0.5s, opacity 0.5s 0.5s',
-  // },
   root: {
     '@media screen and (min-width: 768px)': {
       display: 'none',
@@ -188,9 +139,6 @@ const styles = {
     display: 'flex',
     width: '100%',
   },
-  // transition2: {
-  //   transition: 'opacity 500ms ease-in',
-  // },
   flexGrow: {
     display: 'flex',
     flex: 1,
