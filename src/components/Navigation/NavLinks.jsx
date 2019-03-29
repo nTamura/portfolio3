@@ -1,10 +1,21 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import withStyles from 'react-jss'
 import { NavLink } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { Transition } from 'react-transition-group'
 
 function NavLinks({ classes }) {
+  const [loaded, setLoaded] = useState(false)
+
+  useEffect(() => {
+    setLoaded(true)
+  })
+  const transitionStyles = {
+    entering: { opacity: 0 },
+    entered: { opacity: 1 },
+  }
+
   return (
     <div className={classes.root}>
       <div className={classes.flexGrow}>
@@ -19,36 +30,63 @@ function NavLinks({ classes }) {
           tamura
         </NavLink>
       </div>
-      <NavLink
-        to="/portfolio"
-        className={classes.link}
-        activeClassName={classes.activeLink}
-      >
-        portfolio
-      </NavLink>
-      <NavLink
-        to="/about"
-        className={classes.link}
-        activeClassName={classes.activeLink}
-      >
-        about
-      </NavLink>
-      <a
-        href="https://www.linkedin.com/in/nictamura/"
-        rel="noopener noreferrer"
-        target="_blank"
-        className={classes.link}
-      >
-        <FontAwesomeIcon icon={faGithub} />
-      </a>
-      <a
-        href="https://www.linkedin.com/in/nictamura/"
-        rel="noopener noreferrer"
-        target="_blank"
-        className={classes.link}
-      >
-        <FontAwesomeIcon icon={faLinkedin} />
-      </a>
+
+      <Transition in={loaded} timeout={200}>
+        {state => (
+          <>
+            <NavLink
+              to="/portfolio"
+              className={classes.link}
+              activeClassName={classes.activeLink}
+              style={{
+                transition: 'opacity 2000ms ease-in',
+                opacity: 0,
+                ...transitionStyles[state],
+              }}
+            >
+              portfolio
+            </NavLink>
+            <NavLink
+              to="/about"
+              className={classes.link}
+              activeClassName={classes.activeLink}
+              style={{
+                transition: 'opacity 1500ms ease-in',
+                opacity: 0,
+                ...transitionStyles[state],
+              }}
+            >
+              about
+            </NavLink>
+            <a
+              href="https://www.linkedin.com/in/nictamura/"
+              rel="noopener noreferrer"
+              target="_blank"
+              className={classes.link}
+              style={{
+                transition: 'opacity 1000ms ease-in',
+                opacity: 0,
+                ...transitionStyles[state],
+              }}
+            >
+              <FontAwesomeIcon icon={faGithub} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/nictamura/"
+              rel="noopener noreferrer"
+              target="_blank"
+              className={classes.link}
+              style={{
+                transition: 'opacity 500ms ease-in',
+                opacity: 0,
+                ...transitionStyles[state],
+              }}
+            >
+              <FontAwesomeIcon icon={faLinkedin} />
+            </a>
+          </>
+        )}
+      </Transition>
     </div>
   )
 }

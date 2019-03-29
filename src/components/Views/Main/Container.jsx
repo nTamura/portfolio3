@@ -1,14 +1,15 @@
 import React from 'react'
 import withStyles from 'react-jss'
 import Hero from 'components/Views/Main/Hero'
+import Contain from 'components/Common/Contain'
 
 function Container({ classes }) {
   return (
     <div className={classes.root}>
       <Hero />
-      <div className="container">
+      <Contain>
         <p>body content here</p>
-      </div>
+      </Contain>
     </div>
   )
 }

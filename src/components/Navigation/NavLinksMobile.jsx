@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState } from 'react'
 import withStyles from 'react-jss'
 import { NavLink } from 'react-router-dom'
+import HamburgerMenu from 'react-hamburger-menu'
 import { Transition } from 'react-transition-group'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import HamburgerMenu from 'react-hamburger-menu'
 
 function NavLinksMobile({ classes }) {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -37,6 +37,7 @@ function NavLinksMobile({ classes }) {
             animationDuration={0.4}
           />
         </button>
+
         <Transition in={menuOpen} timeout={200}>
           {state => (
             <div className={classes.dropdownMenu}>
