@@ -68,7 +68,7 @@ function NavLinksMobile({ classes }) {
                 about
               </NavLink>
               <a
-                href="https://www.linkedin.com/in/nictamura/"
+                href="https://github.com/ntamura"
                 rel="noopener noreferrer"
                 target="_blank"
                 className={classes.link}
@@ -82,7 +82,7 @@ function NavLinksMobile({ classes }) {
                 <FontAwesomeIcon icon={faGithub} />
               </a>
               <a
-                href="https://www.linkedin.com/in/nictamura/"
+                href="https://linkedin.com/in/nictamura/"
                 rel="noopener noreferrer"
                 target="_blank"
                 className={classes.link}

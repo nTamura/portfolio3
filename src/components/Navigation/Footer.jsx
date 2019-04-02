@@ -15,14 +15,14 @@ const Footer = ({ classes }) => {
       <Contain>
         <div className={classes.socialContainer}>
           <a
-            href="https://www.linkedin.com/in/nictamura/"
+            href="https://github.com/ntamura"
             rel="noopener noreferrer"
             target="_blank"
           >
             <FontAwesomeIcon icon={faGithub} className={classes.icon} />
           </a>
           <a
-            href="https://www.linkedin.com/in/nictamura/"
+            href="https://linkedin.com/in/nictamura/"
             rel="noopener noreferrer"
             target="_blank"
           >
