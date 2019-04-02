@@ -1,5 +1,6 @@
 html,
-body {
+body,
+#app {
   height: 100%;
 }
 
@@ -18,6 +19,7 @@ body {
   color: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #404e5c;
 }
 
 h1,

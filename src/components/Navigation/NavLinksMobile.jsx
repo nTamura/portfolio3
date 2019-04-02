@@ -24,7 +24,10 @@ function NavLinksMobile({ classes }) {
       </div>
 
       <div>
-        <div className={classes.menuButton}>
+        <button
+          className={classes.menuButton}
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
           <HamburgerMenu
             isOpen={menuOpen}
             width={18}
@@ -33,7 +36,7 @@ function NavLinksMobile({ classes }) {
             animationDuration={0.4}
             menuClicked={() => setMenuOpen(!menuOpen)}
           />
-        </div>
+        </button>
 
         <Transition in={menuOpen} timeout={200}>
           {state => (

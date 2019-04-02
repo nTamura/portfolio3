@@ -114,6 +114,7 @@ function ParticleContainer({ classes }) {
 const styles = {
   container: {
     minHeight: 500,
+    maxHeight: 500,
   },
 }
 export default withStyles(styles)(ParticleContainer)

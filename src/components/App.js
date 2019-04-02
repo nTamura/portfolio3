@@ -10,26 +10,26 @@ import Portfolio from 'components/Views/Portfolio'
 
 function App({ classes }) {
   return (
-    <Scrollbars autoHide autoHideTimeout={100}>
-      <div id="app" className={classes.app}>
-        <Navbar />
-        <div className={classes.flex}>
-          <Switch>
-            <Route exact path="/" component={Main} />
-            <Route exact path="/portfolio" component={Portfolio} />
-            <Route exact path="/about" component={About} />
-          </Switch>
-        </div>
-        <Footer />
+    <Scrollbars
+      id="app"
+      autoHide
+      autoHideTimeout={100}
+      className={classes.scroll}
+    >
+      <Navbar />
+      <div className={classes.flex}>
+        <Switch>
+          <Route exact path="/" component={Main} />
+          <Route exact path="/portfolio" component={Portfolio} />
+          <Route exact path="/about" component={About} />
+        </Switch>
       </div>
+      <Footer />
     </Scrollbars>
   )
 }
 
 const styles = {
-  app: {
-    backgroundColor: '#404E5C',
-  },
   flex: {
     flexGrow: 1,
   },
