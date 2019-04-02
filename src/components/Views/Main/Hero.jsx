@@ -1,6 +1,6 @@
 import React from 'react'
 import withStyles from 'react-jss'
-import Particles from 'components/Views/Main/Particles'
+import Particles from 'components/Common/Particles'
 
 function Hero({ classes }) {
   return (

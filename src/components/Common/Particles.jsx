@@ -80,6 +80,7 @@ function ParticleContainer({ classes }) {
             },
             interactivity: {
               detect_on: 'canvas',
+              resize: 'true',
               events: {
                 onhover: {
                   enable: true,
