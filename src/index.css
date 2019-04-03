@@ -1,12 +1,29 @@
+/* COLOUR PALETTE  */
+/* 
+  BLACK 
+    #000
+  WHITE
+    #FFF
+  STEEL
+    #2D3142
+  STEEL BG
+    #272a38
+  SLATE
+    #26282f
+    
+  STEEL ALT
+    #404e5c
+  CONTRAST 
+    #C4CAD0
+*/
+
 html,
-body,
-#app {
+body {
   height: 100%;
 }
 
 body,
-#root,
-#app {
+#root {
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -19,21 +36,7 @@ body {
   color: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #404e5c;
-}
-
-h1,
-h2 {
-  font-weight: 300;
-  font-size: 230%;
-}
-
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 300;
-  font-size: 130%;
+  background-color: #2d3142;
 }
 
 p {

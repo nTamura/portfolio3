@@ -34,10 +34,14 @@ const styles = {
     display: 'inline-block',
     backgroundColor: 'black',
     padding: 8,
+    fontWeight: 300,
+    fontSize: '2.5rem',
   },
   heroSubText: {
     backgroundColor: 'black',
     padding: 8,
+    fontWeight: 300,
+    fontSize: '1.6rem',
   },
 }
 export default withStyles(styles)(Hero)
