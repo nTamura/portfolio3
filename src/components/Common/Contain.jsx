@@ -1,9 +1,9 @@
 import React from 'react'
 import withStyles from 'react-jss'
 
-const Contain = ({ classes, children }) => {
+const Contain = ({ classes, children, ...rest }) => {
   return (
-    <div {...classes} className={classes.container}>
+    <div {...classes} {...rest} className={classes.container}>
       {children}
     </div>
   )
