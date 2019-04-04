@@ -15,16 +15,14 @@ function NavLinksMobile({ classes }) {
 
   return (
     <div className={classes.root}>
-      <div className={classes.flexGrow}>
+      <div className={classes.navbar}>
         <NavLink exact to="/" className={classes.activeLink}>
           nic
           <br />
           tamura
         </NavLink>
-      </div>
-
-      <div>
         <button
+          type="button"
           className={classes.menuButton}
           onClick={() => setMenuOpen(!menuOpen)}
         >
@@ -37,68 +35,67 @@ function NavLinksMobile({ classes }) {
             menuClicked={() => setMenuOpen(!menuOpen)}
           />
         </button>
-
-        <Transition in={menuOpen} timeout={200}>
-          {state => (
-            <div className={classes.dropdownMenu}>
-              <NavLink
-                to="/portfolio"
-                className={classes.link}
-                activeClassName={classes.activeLink}
-                onClick={() => setMenuOpen(false)}
-                style={{
-                  transition: 'opacity 100ms ease-in-out',
-                  opacity: 0,
-                  ...transitionStyles[state],
-                }}
-              >
-                portfolio
-              </NavLink>
-              <NavLink
-                to="/about"
-                className={classes.link}
-                activeClassName={classes.activeLink}
-                onClick={() => setMenuOpen(false)}
-                style={{
-                  transition: 'opacity 300ms ease-in-out',
-                  opacity: 0,
-                  ...transitionStyles[state],
-                }}
-              >
-                about
-              </NavLink>
-              <a
-                href="https://github.com/ntamura"
-                rel="noopener noreferrer"
-                target="_blank"
-                className={classes.link}
-                onClick={() => setMenuOpen(false)}
-                style={{
-                  transition: 'opacity 500ms ease-in-out',
-                  opacity: 0,
-                  ...transitionStyles[state],
-                }}
-              >
-                <FontAwesomeIcon icon={faGithub} />
-              </a>
-              <a
-                href="https://linkedin.com/in/nictamura/"
-                rel="noopener noreferrer"
-                target="_blank"
-                className={classes.link}
-                onClick={() => setMenuOpen(false)}
-                style={{
-                  transition: 'opacity 700ms ease-in-out',
-                  opacity: 0,
-                  ...transitionStyles[state],
-                }}
-              >
-                <FontAwesomeIcon icon={faLinkedin} />
-              </a>
-            </div>
-          )}
-        </Transition>
       </div>
+      <Transition in={menuOpen} unmountOnExit timeout={200}>
+        {state => (
+          <div className={classes.dropdownMenu}>
+            <NavLink
+              to="/portfolio"
+              className={classes.link}
+              activeClassName={classes.activeLink}
+              onClick={() => setMenuOpen(false)}
+              style={{
+                transition: 'opacity 100ms ease-in-out',
+                opacity: 0,
+                ...transitionStyles[state],
+              }}
+            >
+              portfolio
+            </NavLink>
+            <NavLink
+              to="/about"
+              className={classes.link}
+              activeClassName={classes.activeLink}
+              onClick={() => setMenuOpen(false)}
+              style={{
+                transition: 'opacity 300ms ease-in-out',
+                opacity: 0,
+                ...transitionStyles[state],
+              }}
+            >
+              about
+            </NavLink>
+            <a
+              href="https://github.com/ntamura"
+              rel="noopener noreferrer"
+              target="_blank"
+              className={classes.link}
+              onClick={() => setMenuOpen(false)}
+              style={{
+                transition: 'opacity 500ms ease-in-out',
+                opacity: 0,
+                ...transitionStyles[state],
+              }}
+            >
+              <FontAwesomeIcon icon={faGithub} />
+            </a>
+            <a
+              href="https://linkedin.com/in/nictamura/"
+              rel="noopener noreferrer"
+              target="_blank"
+              className={classes.link}
+              onClick={() => setMenuOpen(false)}
+              style={{
+                transition: 'opacity 700ms ease-in-out',
+                opacity: 0,
+                ...transitionStyles[state],
+              }}
+            >
+              <FontAwesomeIcon icon={faLinkedin} />
+            </a>
+          </div>
+        )}
+      </Transition>
     </div>
   )
 }
@@ -106,20 +103,19 @@ function NavLinksMobile({ classes }) {
 const styles = {
   root: {
     display: 'flex',
-    width: '100%',
+    flexDirection: 'column',
   },
-  flexGrow: {
+  navbar: {
     display: 'flex',
-    flex: 1,
+    justifyContent: 'space-between',
   },
   menuButton: {
-    background: 'transparent',
+    outline: 'none',
     border: '1px solid #000',
     backgroundColor: '#000',
     color: '#FFF',
     padding: 16,
     margin: 10,
-    outline: 'none',
     '&:active': {
       border: '1px solid #FFF',
     },
@@ -127,25 +123,20 @@ const styles = {
   dropdownMenu: {
     display: 'flex',
     flexDirection: 'column',
-    right: 16,
-    textAlign: 'right',
-    position: 'absolute',
+    alignItems: 'flex-end',
     zIndex: 10,
+    height: 214,
+    marginBottom: '-214px',
   },
   link: {
-    color: 'white',
-    textDecoration: 'none',
     padding: 8,
     margin: 10,
     zIndex: 20,
     '&:hover': {
       backgroundColor: 'black',
-      color: 'white',
     },
   },
   activeLink: {
-    color: 'white',
-    textDecoration: 'none',
     backgroundColor: 'black',
     padding: 8,
     margin: 10,

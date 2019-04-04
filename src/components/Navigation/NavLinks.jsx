@@ -93,9 +93,6 @@ function NavLinks({ classes }) {
 
 const styles = {
   root: {
-    // '@media screen and (max-width: 769px)': {
-    //   display: 'none',
-    // },
     display: 'flex',
     width: '100%',
     alignItems: 'center',
@@ -105,22 +102,17 @@ const styles = {
     flex: 1,
   },
   link: {
-    color: 'white',
-    textDecoration: 'none',
     padding: 8,
     margin: 10,
     transition: 'background-color 0.4s ease',
     '&:hover': {
       backgroundColor: 'black',
-      color: 'white',
     },
     '&:active': {
       border: '1px solid #FFF',
     },
   },
   activeLink: {
-    color: 'white',
-    textDecoration: 'none',
     backgroundColor: 'black',
     padding: 8,
     margin: 10,

@@ -1,4 +1,5 @@
 import React from 'react'
+import withStyles from 'react-jss'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
@@ -7,33 +8,35 @@ import {
   faAngellist,
 } from '@fortawesome/free-brands-svg-icons'
 import Contain from 'components/Common/Contain'
-import withStyles from 'react-jss'
 
 const Footer = ({ classes }) => {
   return (
-    <div className={classes.root}>
+    <div className={classes.root} id="footer">
       <Contain>
         <div className={classes.socialContainer}>
           <a
             href="https://github.com/ntamura"
             rel="noopener noreferrer"
             target="_blank"
+            className={classes.icon}
           >
-            <FontAwesomeIcon icon={faGithub} className={classes.icon} />
+            <FontAwesomeIcon icon={faGithub} />
           </a>
           <a
             href="https://linkedin.com/in/nictamura/"
             rel="noopener noreferrer"
             target="_blank"
+            className={classes.icon}
           >
-            <FontAwesomeIcon icon={faLinkedin} className={classes.icon} />
+            <FontAwesomeIcon icon={faLinkedin} />
           </a>
           <a
             href="https://angel.co/ntamura/"
             rel="noopener noreferrer"
             target="_blank"
+            className={classes.icon}
           >
-            <FontAwesomeIcon icon={faAngellist} className={classes.icon} />
+            <FontAwesomeIcon icon={faAngellist} />
           </a>
         </div>
         <div className={classes.linksContainer}>
@@ -49,7 +52,9 @@ const Footer = ({ classes }) => {
             about
           </Link>
         </div>
-        <p className={classes.mutedText}>designed & developed by nic tamura</p>
+        <p className={classes.mutedText}>
+          designed &amp; developed by nic tamura
+        </p>
       </Contain>
     </div>
   )
@@ -62,19 +67,20 @@ const styles = {
   },
   socialContainer: {
     display: 'flex',
-    justifyContent: 'center',
+    justifyContent: 'space-around',
   },
   icon: {
-    margin: 24,
     padding: 8,
     color: 'rgba(255,255,255,0.2)',
+    boxSizing: 'content-box',
     '&:hover': {
       color: '#FFF',
     },
   },
-  linksContainer: {},
+  linksContainer: {
+    marginTop: 16,
+  },
   links: {
-    textDecoration: 'none',
     padding: 8,
     margin: 8,
     color: '#FFF',
