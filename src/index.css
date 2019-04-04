@@ -16,17 +16,16 @@
   CONTRAST 
     #C4CAD0
 */
+* {
+  box-sizing: border-box;
+}
 
 html,
 body {
+  /* display: flex;
+  flex: 1; */
+  width: 100%;
   height: 100%;
-}
-
-body,
-#root {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
 }
 
 body {
@@ -41,4 +40,17 @@ body {
 
 p {
   line-height: 2rem;
+}
+
+#root {
+  height: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+div.ScrollbarContent > div.retroClass {
+  flex: 1;
+  margin-bottom: 80px;
 }
