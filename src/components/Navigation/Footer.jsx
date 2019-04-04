@@ -9,35 +9,41 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 import Contain from 'components/Common/Contain'
 
-const Footer = ({ classes }) => {
+function Footer({ classes }) {
   return (
     <div className={classes.root} id="footer">
       <Contain>
         <div className={classes.socialContainer}>
-          <a
-            href="https://github.com/ntamura"
-            rel="noopener noreferrer"
-            target="_blank"
-            className={classes.icon}
-          >
-            <FontAwesomeIcon icon={faGithub} />
-          </a>
-          <a
-            href="https://linkedin.com/in/nictamura/"
-            rel="noopener noreferrer"
-            target="_blank"
-            className={classes.icon}
-          >
-            <FontAwesomeIcon icon={faLinkedin} />
-          </a>
-          <a
-            href="https://angel.co/ntamura/"
-            rel="noopener noreferrer"
-            target="_blank"
-            className={classes.icon}
-          >
-            <FontAwesomeIcon icon={faAngellist} />
-          </a>
+          <div className={classes.iconContainer}>
+            <a
+              href="https://github.com/ntamura"
+              rel="noopener noreferrer"
+              target="_blank"
+              className={classes.icon}
+            >
+              <FontAwesomeIcon icon={faGithub} />
+            </a>
+          </div>
+          <div className={classes.iconContainer}>
+            <a
+              href="https://linkedin.com/in/nictamura/"
+              rel="noopener noreferrer"
+              target="_blank"
+              className={classes.icon}
+            >
+              <FontAwesomeIcon icon={faLinkedin} />
+            </a>
+          </div>
+          <div className={classes.iconContainer}>
+            <a
+              href="https://angel.co/ntamura/"
+              rel="noopener noreferrer"
+              target="_blank"
+              className={classes.icon}
+            >
+              <FontAwesomeIcon icon={faAngellist} />
+            </a>
+          </div>
         </div>
         <div className={classes.linksContainer}>
           <Link to="/" className={classes.links}>
@@ -59,6 +65,7 @@ const Footer = ({ classes }) => {
     </div>
   )
 }
+
 const styles = {
   root: {
     textAlign: 'center',
@@ -67,10 +74,14 @@ const styles = {
   },
   socialContainer: {
     display: 'flex',
-    justifyContent: 'space-around',
+    justifyContent: 'center',
+  },
+  iconContainer: {
+    margin: 16,
   },
   icon: {
     padding: 8,
+    margin: 18,
     color: 'rgba(255,255,255,0.2)',
     boxSizing: 'content-box',
     '&:hover': {

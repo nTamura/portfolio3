@@ -7,8 +7,8 @@ import Contain from 'components/Common/Contain'
 
 function Navbar({ classes }) {
   return (
-    <div className={classes.root}>
-      <Contain id="navbar">
+    <div className={classes.root} id="navbar">
+      <Contain>
         <MediaQuery minWidth={768}>
           {matches => (matches ? <NavLinks /> : <NavLinksMobile />)}
         </MediaQuery>
