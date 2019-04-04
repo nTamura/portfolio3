@@ -7,19 +7,17 @@ import Footer from 'components/Navigation/Footer'
 import Main from 'components/Views/Main'
 import About from 'components/Views/About'
 import Portfolio from 'components/Views/Portfolio'
+import classless from './Helpers/classless'
 
 function App({ classes }) {
   useEffect(() => {
-    const elements = document.querySelectorAll('div:not([class]):not([id])')
-    Array.from(elements, item => item.classList.add('retroClass'))
-    // react router creates empty div that conflicts with flex styles throughout app. Required to retroactively add styles in css file
+    classless()
   }, [])
 
   return (
     <div className={classes.root}>
       <Scrollbars
         removeTracksWhenNotUsed
-        // removeTrackYWhenNotUsed
         noScrollX
         contentProps={{ className: classes.scroll }}
       >

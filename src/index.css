@@ -1,29 +1,22 @@
 /* COLOUR PALETTE  */
 /* 
-  BLACK 
-    #000
-  WHITE
-    #FFF
-  STEEL
-    #2D3142
-  STEEL BG
-    #272a38
-  SLATE
-    #26282f
+  BLACK     #000
+  WHITE     #FFF
+  STEEL     #2D3142
+  STEEL/BG  #272a38
+  SLATE     #26282f
     
-  STEEL ALT
-    #404e5c
-  CONTRAST 
-    #C4CAD0
+  STEEL ALT #404e5c
+  CONTRAST  #C4CAD0
 */
+
+/* GLOBAL STYLES  */
 * {
   box-sizing: border-box;
 }
 
 html,
 body {
-  /* display: flex;
-  flex: 1; */
   width: 100%;
   height: 100%;
 }
@@ -38,10 +31,6 @@ body {
   background-color: #2d3142;
 }
 
-p {
-  line-height: 2rem;
-}
-
 #root {
   height: 100%;
   min-height: 100%;
@@ -50,7 +39,16 @@ p {
   align-items: stretch;
 }
 
-div.ScrollbarContent > div.retroClass {
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+p {
+  line-height: 2rem;
+}
+
+div.ScrollbarContent > div.classless {
   flex: 1;
   margin-bottom: 80px;
 }
