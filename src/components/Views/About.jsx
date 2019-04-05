@@ -50,7 +50,6 @@ function About({ classes }) {
           </a>
           repository for my latest projects.
         </p>
-        <p>- nic</p>
       </Contain>
     </section>
   )
