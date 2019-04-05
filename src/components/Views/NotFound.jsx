@@ -10,16 +10,14 @@ function NotFound({ classes }) {
     <section className={classes.root}>
       <Contain>
         <HeroSm title="404" />
-        <div>
-          <h3>Woops</h3>
-          <p>
-            It looks like there is nothing here.
-            <Link to="/" className={classes.link}>
-              {' Click here '}
-            </Link>
-            to go back home.
-          </p>
-        </div>
+        <h3>Woops</h3>
+        <p>
+          It looks like there is nothing here.
+          <Link to="/" className={classes.link}>
+            {' Click here '}
+          </Link>
+          to go back home.
+        </p>
       </Contain>
     </section>
   )
