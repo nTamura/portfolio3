@@ -7,7 +7,8 @@ import Footer from 'components/Navigation/Footer'
 import Main from 'components/Views/Main'
 import About from 'components/Views/About'
 import Portfolio from 'components/Views/Portfolio'
-import classless from './Helpers/classless'
+import NotFound from 'components/Common/NotFound'
+import classless from 'components/Helpers/classless'
 
 function App({ classes }) {
   useEffect(() => {
@@ -26,7 +27,8 @@ function App({ classes }) {
           <Switch>
             <Route exact path="/" component={Main} />
             <Route exact path="/portfolio" component={Portfolio} />
-            <Route exact path="/about" component={About} primary={false} />
+            <Route exact path="/about" component={About} />
+            <Route component={NotFound} />
           </Switch>
         </div>
         <Footer />
