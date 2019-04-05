@@ -2,11 +2,13 @@ import React from 'react'
 import withStyles from 'react-jss'
 import Contain from 'components/Common/Contain'
 import Heading from 'components/Common/Heading'
+import HeroSm from 'components/Common/HeroSm'
 
 function About({ classes }) {
   return (
-    <Contain>
-      <section>
+    <section className={classes.root}>
+      <Contain>
+        <HeroSm title="about" />
         <Heading text="i'm nic." />
         <p>
           I am a React Front End Developer with a passion for building things.
@@ -22,9 +24,10 @@ function About({ classes }) {
           I am a creative and resourceful problem solver that loves to learn and
           share knowledge. I don&apos;t like inefficiency, so if you give me a
           tedious task, I will most definitely find a more efficient way to do
-          it. I have been a part of three exciting product launches and worked
-          with some amazing agile teams, and looking to be a part of your next
-          big thing!
+          it. I am always looking to learn and improve, while sharing the
+          knowledge that I already have. I have been a part of three exciting
+          product launches and worked with some amazing agile teams, and looking
+          to be a part of your next big thing!
         </p>
         <p>
           You can connect with me via
@@ -32,7 +35,7 @@ function About({ classes }) {
             className={classes.link}
             target="_blank"
             rel="noopener noreferrer"
-            href="https://www.linkedin.com/in/nictamura/"
+            href="https://linkedin.com/in/nictamura/"
           >
             {' LinkedIn '}
           </a>
@@ -41,23 +44,32 @@ function About({ classes }) {
             className={classes.link}
             target="_blank"
             rel="noopener noreferrer"
-            href="https://www.github.com/ntamura/"
+            href="https://github.com/ntamura/"
           >
             {' Github '}
           </a>
           repository for my latest projects.
         </p>
-      </section>
-    </Contain>
+        <p>- nic</p>
+      </Contain>
+    </section>
   )
 }
 
 const styles = {
-  root: {},
+  root: {
+    flex: 1,
+  },
+  heroText: {
+    display: 'inline-block',
+    backgroundColor: 'black',
+    padding: 8,
+    fontWeight: 300,
+    fontSize: '2.5rem',
+  },
   link: {
-    textDecoration: 'none',
-    color: '#FFF',
     fontWeight: 'bolder',
   },
 }
+
 export default withStyles(styles)(About)
