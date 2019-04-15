@@ -3,7 +3,6 @@ import withStyles from 'react-jss'
 import Contain from 'components/Common/Contain'
 import HeroSm from 'components/Common/HeroSm'
 import Heading from 'components/Common/Heading'
-import Work from 'components/Views/Portfolio/Work'
 
 function Container({ classes }) {
   return (
@@ -18,7 +17,6 @@ function Container({ classes }) {
 
         <Heading text="work" />
         <p>Here are some of my latest projects</p>
-        <Work />
       </Contain>
     </section>
   )
