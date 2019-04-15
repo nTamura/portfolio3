@@ -12,23 +12,25 @@ function About({ classes }) {
         <Heading text="i'm nic." />
         <p>
           I am a React Front End Developer with a passion for building things.
-          My background is in computer hardware and networking - I can build a
-          working computer with my eyes closed (but I probably don&apos;t
-          remember how to configure a Cisco switch anymore). I am a graduate of
-          CodeCore and have spent three cohorts as a teaching assistant at
-          BrainStation. As a life-long learner, I am excited to be a part of the
-          growing React community and am enthusiastic for my journey in the web
+          My background is mostly in computer hardware and some networking. I am
+          a graduate of CodeCore and have spent three cohorts as a teaching
+          assistant at BrainStation. More recently, I was working as a Front End
+          Engineer at a VR startup. I have been a part of three exciting product
+          launches and worked with some amazing agile teams, and looking to be a
+          part of your next big thing!
+        </p>
+        {/* <p>
+          As a life-long learner, I am excited to be a part of the growing
+          React community and am enthusiastic for my journey in the web
           development field.
         </p>
         <p>
-          I am a creative and resourceful problem solver that loves to learn and
-          share knowledge. I don&apos;t like inefficiency, so if you give me a
-          tedious task, I will most definitely find a more efficient way to do
-          it. I am always looking to learn and improve, while sharing the
-          knowledge that I already have. I have been a part of three exciting
-          product launches and worked with some amazing agile teams, and looking
-          to be a part of your next big thing!
-        </p>
+          I am a creative and resourceful problem solver that loves to learn
+          and share knowledge. I don&apos;t like inefficiency, so if you give
+          me a tedious task, I will most definitely find a more efficient way
+          to do it. I am always looking to learn and improve, while sharing
+          the knowledge that I already have.
+        </p> */}
         <p>
           You can connect with me via
           <a
