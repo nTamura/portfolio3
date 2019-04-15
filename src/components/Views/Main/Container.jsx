@@ -2,7 +2,10 @@ import React from 'react'
 import withStyles from 'react-jss'
 import Hero from 'components/Views/Main/Hero'
 import Contain from 'components/Common/Contain'
+import Divider from 'components/Common/Divider'
 import Heading from 'components/Common/Heading'
+import Portfolio from 'components/Views/Main/Portfolio'
+import Intro from 'components/Views/Main/Intro'
 
 function Container({ classes }) {
   return (
@@ -10,26 +13,11 @@ function Container({ classes }) {
       <Hero />
       <Contain>
         <section className={classes.section}>
-          <Heading text="intro" />
-          <p>
-            I am a React Front End Developer with a passion for building things.
-            I studied Full-Stack Development, been a part of three exciting
-            product launches with some amazing agile teams, and looking to be a
-            part of your next big thing.
-          </p>
-          <p />
+          <Intro />
         </section>
         <section className={classes.section}>
-          <Heading text="technical" />
-          <p>
-            HTML/CSS, JavaScript (ES6), React, Redux, Express, Node, Ruby on
-            Rails, Firebase, Mongo, SQL, RESTful API, PWA, Git
-          </p>
-          <p>
-            I graduated from CodeCore which focused on JavaScript and Ruby
-            development. More recently, I have been working primarily with React
-            and have been focusing on Front End Development.
-          </p>
+          <Heading text="porfolio" />
+          <Portfolio />
         </section>
         <div className={classes.notes}>
           <p className={classes.mutedText}>
@@ -43,8 +31,9 @@ function Container({ classes }) {
 }
 const styles = {
   root: {},
+
   section: {
-    marginBottom: 64,
+    marginBottom: 40,
   },
   notes: {
     marginTop: 64,
