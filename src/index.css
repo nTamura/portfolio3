@@ -10,6 +10,12 @@
   CONTRAST  #C4CAD0
 */
 
+/* BREAKPOINTS */
+/* 
+  @media (max-width:992px)
+  768
+*/
+
 /* GLOBAL STYLES  */
 * {
   box-sizing: border-box;
@@ -29,6 +35,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #2d3142;
+}
+
+section {
+  margin-top: 40px;
+  margin-bottom: 60px;
 }
 
 #root {

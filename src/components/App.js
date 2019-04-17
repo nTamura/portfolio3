@@ -45,6 +45,7 @@ const styles = {
   scroll: {
     display: 'flex',
     flexDirection: 'column',
+    paddingRight: 0,
   },
 }
 
