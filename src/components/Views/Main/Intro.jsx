@@ -1,8 +1,6 @@
 import React from 'react'
 import withStyles from 'react-jss'
 import Heading from 'components/Common/Heading'
-import Divider from 'components/Common/Divider'
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faJs,
@@ -16,61 +14,65 @@ import { faTerminal, faFireAlt } from '@fortawesome/free-solid-svg-icons'
 function Intro({ classes }) {
   return (
     <>
-      <Heading text="intro" />
-      <p>
-        I am a React Front End Developer with a passion for building things. I
-        studied Full-Stack Development, been a part of three exciting product
-        launches with some amazing agile teams, and looking to be a part of your
-        next big thing.
-      </p>
-      <Divider />
-
-      <h3 className={classes.subTitle}>primary skills & tools</h3>
-      <div className={classes.chipsContainer}>
-        <span className={classes.chips}>
-          <FontAwesomeIcon icon={faHtml5} />
-          {' HTML5'}
-        </span>
-        <span className={classes.chips}>
-          <FontAwesomeIcon icon={faCss3} />
-          {' CSS3'}
-        </span>
-        <span className={classes.chips}>
-          <FontAwesomeIcon icon={faJs} />
-          {' JavaScript'}
-        </span>
-        <span className={classes.chips}>
-          <FontAwesomeIcon icon={faReact} />
-          {' React'}
-        </span>
-        <span className={classes.chips}>
-          <FontAwesomeIcon icon={faFireAlt} />
-          {' Firebase'}
-        </span>
-        <span className={classes.chips}>
-          <FontAwesomeIcon icon={faTerminal} />
-          {' iTerm'}
-        </span>
-        <span className={classes.chips}>
-          <FontAwesomeIcon icon={faGithub} />
-          {' Github'}
-        </span>
-      </div>
-      <h3 className={classes.subTitle}>secondary & complimentary</h3>
-      <div className={classes.chipsContainer}>
-        <span className={classes.chips}>Node</span>
-        <span className={classes.chips}>Redux</span>
-        <span className={classes.chips}>Context API</span>
-        <span className={classes.chips}>Hooks</span>
-        <span className={classes.chips}>Express</span>
-        <span className={classes.chips}>Invision</span>
-        <span className={classes.chips}>Jira</span>
-        <span className={classes.chips}>MongoDB</span>
-        <span className={classes.chips}>SQL</span>
-        <span className={classes.chips}>Ruby on Rails</span>
-        <span className={classes.chips}>RESTful API</span>
-        <span className={classes.chips}>PWA</span>
-      </div>
+      <section>
+        <Heading text="intro" />
+        <p>
+          I am a React Front End Developer with a passion for building things. I
+          studied Full-Stack Development, been a part of three exciting product
+          launches with some amazing agile teams, and looking to be a part of
+          your next big thing.
+        </p>
+      </section>
+      <section>
+        <h3 className={classes.subTitle}>primary skills & tools</h3>
+        <div className={classes.chipsContainer}>
+          <span className={classes.chips}>
+            <FontAwesomeIcon icon={faHtml5} />
+            {' HTML5'}
+          </span>
+          <span className={classes.chips}>
+            <FontAwesomeIcon icon={faCss3} />
+            {' CSS3'}
+          </span>
+          <span className={classes.chips}>
+            <FontAwesomeIcon icon={faJs} />
+            {' JavaScript'}
+          </span>
+          <span className={classes.chips}>
+            <FontAwesomeIcon icon={faReact} />
+            {' React'}
+          </span>
+          <span className={classes.chips}>
+            <FontAwesomeIcon icon={faFireAlt} />
+            {' Firebase'}
+          </span>
+          <span className={classes.chips}>
+            <FontAwesomeIcon icon={faGithub} />
+            {' Github'}
+          </span>
+          <span className={classes.chips}>
+            <FontAwesomeIcon icon={faTerminal} />
+            {' iTerm'}
+          </span>
+        </div>
+      </section>
+      <section>
+        <h3 className={classes.subTitle}>secondary & complimentary</h3>
+        <div className={classes.chipsContainer}>
+          <span className={classes.chips}>Node</span>
+          <span className={classes.chips}>Redux</span>
+          <span className={classes.chips}>Context API</span>
+          <span className={classes.chips}>Hooks</span>
+          <span className={classes.chips}>Express</span>
+          <span className={classes.chips}>Invision</span>
+          <span className={classes.chips}>Jira</span>
+          <span className={classes.chips}>MongoDB</span>
+          <span className={classes.chips}>mySQL</span>
+          <span className={classes.chips}>Ruby on Rails</span>
+          <span className={classes.chips}>RESTful API</span>
+          <span className={classes.chips}>PWA</span>
+        </div>
+      </section>
     </>
   )
 }

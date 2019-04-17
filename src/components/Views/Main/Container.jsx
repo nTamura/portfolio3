@@ -2,8 +2,7 @@ import React from 'react'
 import withStyles from 'react-jss'
 import Hero from 'components/Views/Main/Hero'
 import Contain from 'components/Common/Contain'
-import Divider from 'components/Common/Divider'
-import Heading from 'components/Common/Heading'
+// import Divider from 'components/Common/Divider'
 import Portfolio from 'components/Views/Main/Portfolio'
 import Intro from 'components/Views/Main/Intro'
 
@@ -12,13 +11,8 @@ function Container({ classes }) {
     <div className={classes.root}>
       <Hero />
       <Contain>
-        <section className={classes.section}>
-          <Intro />
-        </section>
-        <section className={classes.section}>
-          <Heading text="porfolio" />
-          <Portfolio />
-        </section>
+        <Intro />
+        <Portfolio />
         <div className={classes.notes}>
           <p className={classes.mutedText}>
             This site is currently in active development. Please check in later
@@ -31,10 +25,6 @@ function Container({ classes }) {
 }
 const styles = {
   root: {},
-
-  section: {
-    marginBottom: 40,
-  },
   notes: {
     marginTop: 64,
     textAlign: 'center',

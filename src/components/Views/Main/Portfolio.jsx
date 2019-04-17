@@ -1,70 +1,70 @@
 import React from 'react'
 import withStyles from 'react-jss'
-import water from 'components/Assets/Img/water.jpg'
-
+import { Link } from 'react-router-dom'
 import projects from 'components/Helpers/projects'
+import Heading from 'components/Common/Heading'
 
 function Portfolio({ classes }) {
   return (
-    <div className={classes.root}>
-      {projects.map(item => (
-        <div className={classes.item}>
-          <div className={classes.titleContainer}>
-            <h2 className={classes.title}>{item.title}</h2>
-            <p className={classes.tags}>{item.tags}</p>
+    <section>
+      <Heading text="porfolio" />
+      <div className={classes.grid}>
+        {projects.map(item => (
+          <div className={classes.cell}>
+            <img src={item.preview} className={classes.preview} alt="preview" />
+            <Link to={item.slug}>
+              <div className={classes.overlay}>
+                <div className={classes.overlayTextContainer}>
+                  <h1 className={classes.title}>{item.title}</h1>
+                  <h3 className={classes.sub}>{item.type}</h3>
+                </div>
+              </div>
+            </Link>
           </div>
-          <div className={classes.summaryContainer}>
-            {/* <div className={classes.overlay}> */}
-            <p className={classes.summary}>{item.summary}</p>
-            {/* </div> */}
-          </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+    </section>
   )
 }
 
 const styles = {
-  root: {
-    display: 'grid',
-    gridTemplateColumns: '1fr',
-    '@media (min-width:992px)': {
-      gridTemplateColumns: '1fr 1fr',
+  grid: {
+    display: 'flex',
+    '@media (max-width:630px)': {
+      flexDirection: 'column',
     },
   },
-  item: {
-    backgroundColor: '#404e5c',
+  cell: {
+    flex: '1 1 auto',
+    position: 'relative',
     margin: 16,
+    alignSelf: 'center',
   },
-  titleContainer: {
-    backgroundColor: '#272a38',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    padding: 16,
-  },
-  title: {},
-  tags: {
-    margin: '0 0 8px',
-    fontWeight: 'lighter',
+  preview: {
+    width: '100%',
+    height: 'auto',
+    maxWidth: 450,
   },
   overlay: {
-    width: '100%',
-    height: '100%',
-    background: 'rgba(0,0,0,0.7)',
+    backgroundColor: 'rgba(0,0,0,0.9)',
+    top: 0,
+    bottom: 0,
+    right: 0,
+    left: 0,
+    opacity: 0,
+    transition: 'opacity .3s ease-in-out',
+    position: 'absolute',
     '&:hover': {
-      // backgroundImage: `url(${water})`,
-      opacity: 0,
+      opacity: 1,
     },
   },
-  summaryContainer: {
-    // backgroundImage: `url(${water})`,
-    backgroundSize: 'cover',
+  overlayTextContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    textAlign: 'center',
+    height: '100%',
+    transition: 'opacity .3s ease-in-out',
   },
-  summary: {
-    padding: 16,
-    margin: 0,
-  },
-  description: {},
 }
 export default withStyles(styles)(Portfolio)
