@@ -16,7 +16,7 @@ const projects = [
     image1: '',
     image2: '',
     image3: '',
-    slug: '/projects/scenarion',
+    slug: '/portfolio/scenarion',
   },
   {
     title: 'Mini-Crypto',
@@ -30,7 +30,7 @@ const projects = [
     image1: '',
     image2: '',
     image3: '',
-    slug: '/projects/minicrypto',
+    slug: '/portfolio/minicrypto',
   },
   {
     title: 'Dashvotes',
@@ -44,7 +44,7 @@ const projects = [
     image1: '',
     image2: '',
     image3: '',
-    slug: '/projects/dashvotes',
+    slug: '/portfolio/dashvotes',
   },
 ]
 

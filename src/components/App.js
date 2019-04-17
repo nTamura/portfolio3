@@ -28,6 +28,7 @@ function App({ classes }) {
           <Switch>
             <Route exact path="/" component={Main} />
             <Route exact path="/portfolio" component={NotReady} />
+            <Route path="/portfolio/:id" component={NotReady} />
             <Route exact path="/about" component={About} />
             <Route component={NotFound} />
           </Switch>
