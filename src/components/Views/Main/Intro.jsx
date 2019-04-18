@@ -10,6 +10,7 @@ import {
   faHtml5,
 } from '@fortawesome/free-brands-svg-icons'
 import { faTerminal, faFireAlt } from '@fortawesome/free-solid-svg-icons'
+import Chip from 'components/Common/Chip'
 
 function Intro({ classes }) {
   return (
@@ -59,18 +60,18 @@ function Intro({ classes }) {
       <section>
         <h3 className={classes.subTitle}>secondary & complimentary</h3>
         <div className={classes.chipsContainer}>
-          <span className={classes.chips}>Node</span>
-          <span className={classes.chips}>Redux</span>
-          <span className={classes.chips}>Context API</span>
-          <span className={classes.chips}>Hooks</span>
-          <span className={classes.chips}>Express</span>
-          <span className={classes.chips}>Invision</span>
-          <span className={classes.chips}>Jira</span>
-          <span className={classes.chips}>MongoDB</span>
-          <span className={classes.chips}>mySQL</span>
-          <span className={classes.chips}>Ruby on Rails</span>
-          <span className={classes.chips}>RESTful API</span>
-          <span className={classes.chips}>PWA</span>
+          <Chip text="Node" />
+          <Chip text="Redux" />
+          <Chip text="Context API" />
+          <Chip text="Hooks" />
+          <Chip text="Express" />
+          <Chip text="Invision" />
+          <Chip text="Jira" />
+          <Chip text="MongoDB" />
+          <Chip text="mySQL" />
+          <Chip text="Ruby on Rails" />
+          <Chip text="RESTful API" />
+          <Chip text="PWA" />
         </div>
       </section>
     </>
