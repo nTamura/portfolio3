@@ -50,11 +50,11 @@ function Footer({ classes }) {
             home
           </Link>
           {' / '}
-          <Link to="/" className={classes.links}>
+          <Link to="/portfolio" className={classes.links}>
             portfolio
           </Link>
           {' / '}
-          <Link to="/" className={classes.links}>
+          <Link to="/about" className={classes.links}>
             about
           </Link>
         </div>
