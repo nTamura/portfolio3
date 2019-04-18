@@ -7,6 +7,7 @@ import Footer from 'components/Navigation/Footer'
 import Main from 'components/Views/Main'
 import About from 'components/Views/About'
 import Portfolio from 'components/Views/Portfolio'
+import PortfolioPiece from 'components/Views/Portfolio/PortfolioPiece'
 import NotFound from 'components/Views/NotFound'
 import NotReady from 'components/Views/NotReady'
 import classless from 'components/Helpers/classless'
@@ -28,7 +29,7 @@ function App({ classes }) {
           <Switch>
             <Route exact path="/" component={Main} />
             <Route exact path="/portfolio" component={Portfolio} />
-            <Route path="/portfolio/:id" component={NotReady} />
+            <Route path="/portfolio/:id" component={PortfolioPiece} />
             <Route exact path="/about" component={About} />
             <Route component={NotFound} />
           </Switch>
