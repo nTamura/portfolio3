@@ -15,7 +15,7 @@ function Portfolio({ classes }) {
         <Heading text="portfolio" />
         <div className={classes.grid}>
           {projects.map(item => (
-            <div className={classes.cell}>
+            <div className={classes.cell} key={item.id}>
               <img
                 src={item.preview}
                 className={classes.preview}

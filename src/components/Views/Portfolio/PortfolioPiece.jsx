@@ -5,16 +5,16 @@ import HeroSm from 'components/Common/HeroSm'
 import projects from 'components/Helpers/projects'
 import Heading from 'components/Common/Heading'
 import Contain from 'components/Common/Contain'
+import Chip from 'components/Common/Chip'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import {
   faExternalLinkAlt,
   faArrowLeft,
 } from '@fortawesome/free-solid-svg-icons'
-import { faGithub } from '@fortawesome/free-brands-svg-icons'
-import Chip from 'components/Common/Chip'
+
 function PortfolioPiece({ classes, match }) {
   useEffect(() => {
-    // console.log(match.url)
     getSingleProject(match.url)
   }, [])
 

@@ -9,6 +9,7 @@ import dashvotesScreen2 from 'assets/img/dashvotes-screen2.png'
 
 const projects = [
   {
+    id: '01',
     title: 'Scenarion.io',
     description:
       'React web app for Scenarion, with sign up flow, & client dashboard. ',
@@ -34,6 +35,7 @@ const projects = [
     slug: '/portfolio/scenarion',
   },
   {
+    id: '02',
     title: 'Mini-Crypto',
     description: 'A simple cryptocurrency tracker for mobile devices.',
     type: 'Mobile web app',
@@ -58,6 +60,7 @@ const projects = [
     slug: '/portfolio/minicrypto',
   },
   {
+    id: '03',
     title: 'Dashvotes',
     description: 'Create, vote and view polls.',
     type: 'Progressive web app',
